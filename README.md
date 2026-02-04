@@ -2,8 +2,8 @@
 
 A modern, compassionate, and professional website redesign for Dr. Maya Reynolds, a fictional therapist. This project showcases a clean, responsive design built with Next.js and Tailwind CSS, focusing on user experience and accessible information structure.
 - Live Link - https://grow-my-therapy-phi-bay.vercel.app/
-## 🚀 Built With
 
+## 🚀 Built With
 - **[Next.js 15](https://nextjs.org/)** - The React Framework for the Web
 - **[Tailwind CSS](https://tailwindcss.com/)** - Utility-first CSS framework
 - **[TypeScript](https://www.typescriptlang.org/)** - Typed JavaScript for better development experience

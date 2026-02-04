@@ -5,7 +5,7 @@ export default function Hero() {
         <section className="relative w-full min-h-[90vh] flex items-center pt-20">
             <div className="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center h-full pt-12 md:pt-0">
                 {/* Image Column */}
-                <div className="relative w-full max-w-md md:max-w-none md:w-[85%] h-[500px] md:h-[750px] order-1 md:order-first mx-auto">
+                <div className="relative w-[75%] max-w-[320px] md:max-w-none md:w-[85%] h-[380px] md:h-[750px] order-1 md:order-first mx-auto">
                     <div className="absolute inset-0 rounded-t-[400px] overflow-hidden">
                         <Image
                             src="/images/hero_vertical.png"
