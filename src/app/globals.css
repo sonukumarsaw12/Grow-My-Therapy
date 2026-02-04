@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  /* Serene Sage Palette */
+  --background: #FBFAF8;
+  /* Warm Cream */
+  --foreground: #2D3748;
+  /* Soft Charcoal */
+
+  --primary: #5C7C66;
+  /* Calming Sage Green */
+  --secondary: #EFF2EE;
+  /* Pale Mint/Grey */
+  --accent: #9CA89E;
+  /* Muted Eucalyptus */
+}
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+
+  /* Custom Aliases to match component usage */
+  --color-text: var(--foreground);
+  --color-text-light: var(--accent);
+
+  --font-serif: var(--font-playfair);
+  --font-sans: var(--font-lato);
+}
+
+
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), sans-serif;
+}
