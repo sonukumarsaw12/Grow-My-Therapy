@@ -1,17 +1,17 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Lato } from "next/font/google";
+import { Cormorant_Garamond, Outfit } from "next/font/google";
 import "./globals.css";
 import clsx from "clsx";
 
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
+const cormorantGaramond = Cormorant_Garamond({
+  variable: "--font-serif",
+  weight: ["300", "400", "500", "600", "700"],
   subsets: ["latin"],
   display: "swap",
 });
 
-const lato = Lato({
-  variable: "--font-lato",
-  weight: ["300", "400", "700"],
+const outfit = Outfit({
+  variable: "--font-sans",
   subsets: ["latin"],
   display: "swap",
 });
@@ -58,8 +58,8 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={clsx(
-          playfair.variable,
-          lato.variable,
+          cormorantGaramond.variable,
+          outfit.variable,
           "antialiased bg-background text-foreground"
         )}
       >

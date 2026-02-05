@@ -26,30 +26,35 @@ export default function FAQ() {
     const [openIndex, setOpenIndex] = useState<number | null>(0);
 
     return (
-        <section id="faq" className="py-24 bg-secondary/30">
-            <div className="container mx-auto px-6 max-w-3xl">
-                <h2 className="font-serif text-4xl font-bold text-text mb-12 text-center">Frequently Asked Questions</h2>
+        <section id="faq" className="py-32 bg-background">
+            <div className="container mx-auto px-6 max-w-4xl">
+                <div className="text-center mb-16">
+                    <span className="text-[10px] uppercase tracking-[0.4em] text-primary font-bold mb-4 block">Common Inquiries</span>
+                    <h2 className="font-serif text-5xl md:text-6xl font-medium text-foreground mb-4">Frequently Asked Questions</h2>
+                </div>
 
-                <div className="space-y-4">
+                <div className="space-y-6">
                     {faqs.map((faq, index) => (
                         <ScrollReveal key={index} delay={index * 100}>
-                            <div className="bg-white rounded-xl shadow-sm overflow-hidden">
+                            <div className={`overflow-hidden transition-all duration-500 border rounded-[32px] ${openIndex === index ? "bg-secondary/20 border-primary/20 shadow-soft" : "bg-white border-primary/5 shadow-sm hover:border-primary/10"}`}>
                                 <button
                                     onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                                    className="w-full px-8 py-6 flex items-center justify-between text-left hover:bg-secondary/10 transition-colors"
+                                    className="w-full px-10 py-8 flex items-center justify-between text-left transition-all duration-300"
                                 >
-                                    <span className="font-serif text-xl font-medium text-text">{faq.question}</span>
-                                    {openIndex === index ? (
-                                        <Minus className="w-5 h-5 text-primary" />
-                                    ) : (
-                                        <Plus className="w-5 h-5 text-primary" />
-                                    )}
+                                    <span className={`font-serif text-xl md:text-2xl transition-colors duration-500 ${openIndex === index ? "text-primary" : "text-foreground"}`}>{faq.question}</span>
+                                    <div className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-500 ${openIndex === index ? "bg-primary text-white rotate-180" : "bg-secondary text-primary"}`}>
+                                        {openIndex === index ? (
+                                            <Minus className="w-5 h-5 stroke-[1.5]" />
+                                        ) : (
+                                            <Plus className="w-5 h-5 stroke-[1.5]" />
+                                        )}
+                                    </div>
                                 </button>
                                 <div
-                                    className={`px-8 overflow-hidden transition-all duration-300 ease-in-out ${openIndex === index ? "max-h-40 pb-6 opacity-100" : "max-h-0 pb-0 opacity-0"
+                                    className={`px-10 overflow-hidden transition-all duration-700 ease-in-out ${openIndex === index ? "max-h-[500px] pb-10 opacity-100 translate-y-0" : "max-h-0 pb-0 opacity-0 -translate-y-4"
                                         }`}
                                 >
-                                    <p className="text-text-light">{faq.answer}</p>
+                                    <p className="text-foreground/60 text-lg leading-relaxed font-light">{faq.answer}</p>
                                 </div>
                             </div>
                         </ScrollReveal>

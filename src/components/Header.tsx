@@ -49,46 +49,46 @@ export default function Header() {
         <>
             <header
                 className={clsx(
-                    "sticky top-0 z-50 w-full transition-all duration-500 ease-in-out",
+                    "sticky top-0 z-50 w-full transition-all duration-700 ease-in-out",
                     isVisible ? "translate-y-0" : "-translate-y-full",
                     isAtTop && !isMobileMenuOpen
                         ? "bg-transparent border-transparent py-6"
-                        : "bg-secondary/95 backdrop-blur-md border-b border-white/50 py-4 shadow-sm"
+                        : "bg-background/80 backdrop-blur-xl border-b border-primary/5 py-4 shadow-sm"
                 )}
             >
-                <div className="container mx-auto px-6 flex items-center justify-between transition-all duration-500">
+                <div className="container mx-auto px-6 flex items-center justify-between">
                     {/* Logo: Order 2 on mobile (Right), Order 1 on desktop (Left) */}
-                    <Link href="/" className="order-2 md:order-1 font-serif text-2xl font-bold text-text hover:text-primary transition-colors">
+                    <Link href="/" className="order-2 md:order-1 font-serif text-2xl font-bold text-foreground hover:text-primary transition-all duration-500 tracking-tight">
                         Dr. Maya Reynolds
                     </Link>
 
                     {/* Desktop Nav: Order 2 */}
-                    <nav className="hidden md:flex order-2 items-center gap-10 text-text">
+                    <nav className="hidden md:flex order-2 items-center gap-12 text-foreground/80">
                         {["Services", "About", "Office", "FAQ"].map((item) => (
                             <Link
                                 key={item}
                                 href={`#${item.toLowerCase()}`}
-                                className="relative group text-sm font-medium tracking-wide transition-colors"
+                                className="relative group text-sm font-medium tracking-widest transition-colors uppercase"
                             >
-                                <span className="group-hover:text-primary transition-colors">{item}</span>
-                                <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-primary transition-all duration-700 ease-in-out group-hover:w-full" />
+                                <span className="group-hover:text-primary transition-colors duration-500">{item}</span>
+                                <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-primary transition-all duration-500 ease-in-out group-hover:w-full" />
                             </Link>
                         ))}
                         <Link
                             href="#contact"
-                            className="relative group text-sm font-medium tracking-wide transition-colors"
+                            className="relative group text-sm font-bold tracking-widest transition-colors uppercase text-primary"
                         >
-                            <span className="group-hover:text-primary transition-colors">Contact</span>
-                            <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-primary transition-all duration-700 ease-in-out group-hover:w-full" />
+                            <span className="group-hover:text-primary-hover transition-colors duration-500">Contact</span>
+                            <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-primary-hover transition-all duration-500 ease-in-out group-hover:w-full" />
                         </Link>
                     </nav>
 
                     {/* Mobile Menu Button: Order 1 on mobile (Left) */}
                     <button
                         onClick={() => setIsMobileMenuOpen(true)}
-                        className="md:hidden order-1 p-2 -ml-2 text-text hover:text-primary transition-colors"
+                        className="md:hidden order-1 p-2 -ml-2 text-foreground hover:text-primary transition-all duration-500"
                     >
-                        <Menu className="w-6 h-6" />
+                        <Menu className="w-6 h-6 stroke-[1.5]" />
                     </button>
                 </div>
             </header>
